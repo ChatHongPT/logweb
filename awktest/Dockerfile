@@ -1,9 +1,9 @@
 # 빌드 단계
-FROM gradle:8.3.3-jdk17 AS build
+FROM eclipse-temurin:17-jdk
 WORKDIR /app
-COPY build.gradle settings.gradle ./
-COPY src ./src
-RUN gradle clean bootJar -x test
+COPY build/libs/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","app.jar"]
 
 # 실행 단계만 사용
 FROM eclipse-temurin:17-jre
