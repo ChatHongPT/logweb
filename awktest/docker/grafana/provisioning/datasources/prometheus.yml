@@ -4,6 +4,15 @@ datasources:
   - name: Prometheus
     type: prometheus
     access: proxy
-    url: http://prometheus:8080
+    url: http://prometheus:9090
     isDefault: true
     editable: true
+    # 성능 최적화 설정
+    jsonData:
+      httpMethod: POST
+      queryTimeout: 60s
+      timeInterval: 30s
+      # 캐시 설정
+      cacheLevel: "L2"
+      # 쿼리 최적화
+      maxLines: 1000
