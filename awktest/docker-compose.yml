@@ -2,7 +2,6 @@ version: '3.8'
 services:
   spring-app:
     build: .
-    image: ricky0130/spring-prometheus-demo:latest
     ports:
       - "80:80"            # 호스트 80 → 컨테이너 80
 
