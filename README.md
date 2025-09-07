@@ -1,5 +1,7 @@
 # CPU 모니터링 시스템
 
+<img width="1024" height="800" alt="image" src="https://github.com/user-attachments/assets/6c967487-8338-4332-8994-2d37a05ec529" />
+
 Linux 시스템에서 `journalctl`, `crontab`, `awk`를 사용한 실시간 CPU 스트레스 감지 시스템입니다.
 
 ## 팀원
