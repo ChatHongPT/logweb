@@ -1,35 +1,36 @@
-# 🖥️ CPU 모니터링 시스템
+# CPU 모니터링 시스템
 
 Linux 시스템에서 `journalctl`, `crontab`, `awk`를 사용한 실시간 CPU 스트레스 감지 시스템입니다.
 
-## 👤 팀원
+## 팀원
 
 | 최홍석 | 홍윤기 | 
 | :---: | :---: |  
 | <img width="160px" src="https://github.com/user-attachments/assets/02386ffc-793b-49ec-b0e2-41f088b5f52f"/>  | <img width="150px" src="https://github.com/user-attachments/assets/e8fdc284-987f-45a4-9cdc-d473dcbcc5bb"/> |
 | [@ChatHongPT](https://github.com/ChatHongPT) | [@yunkihong-dev](https://github.com/yunkihong-dev) |
 
+## 주요 기능
 
-## 📈 주요 기능
+- 실시간 모니터링: 1초마다 CPU 사용률 체크
+- 자동 알림: 임계값 초과 시 콘솔 및 시스템 로그에 기록
+- 파일 로깅: 모든 결과를 `cpu_log.txt`에 저장
+- 백그라운드 실행: 터미널 종료 후에도 계속 실행
+- journalctl 연동: 시스템 로그로 스트레스 이벤트 추적
+- awk 활용: 텍스트 처리 및 조건 분석
 
-- ✅ **실시간 모니터링**: 1초마다 CPU 사용률 체크
-- ✅ **자동 알림**: 임계값 초과 시 콘솔 및 시스템 로그에 기록
-- ✅ **파일 로깅**: 모든 결과를 `cpu_log.txt`에 저장
-- ✅ **백그라운드 실행**: 터미널 종료 후에도 계속 실행
-- ✅ **journalctl 연동**: 시스템 로그로 스트레스 이벤트 추적
-- ✅ **awk 활용**: 텍스트 처리 및 조건 분석
+## 기술 스택
 
-## 🛠️ 사용된 도구
+![Bash Shell](https://img.shields.io/badge/Shell-Bash-4EAA25?logo=gnubash&logoColor=fff)
+![vmstat](https://img.shields.io/badge/Linux-vmstat-333?logo=linux&logoColor=fff)
+![top](https://img.shields.io/badge/Linux-top-333?logo=linux&logoColor=fff)
+![awk](https://img.shields.io/badge/Tool-awk-000?logo=gnu&logoColor=fff)
+![logger](https://img.shields.io/badge/Linux-logger-666?logo=linux&logoColor=fff)
+![journalctl](https://img.shields.io/badge/Linux-journalctl-666?logo=linux&logoColor=fff)
+![crontab](https://img.shields.io/badge/Linux-crontab-666?logo=linux&logoColor=fff)
+![nohup](https://img.shields.io/badge/Linux-nohup-666?logo=linux&logoColor=fff)
+![stress](https://img.shields.io/badge/Linux-stress-CC0000?logo=linux&logoColor=fff)
 
-- **vmstat**: CPU 사용률 측정
-- **top**: 백업 CPU 측정 방법
-- **awk**: 텍스트 분석 및 조건 처리
-- **logger**: 시스템 로그 기록
-- **journalctl**: 시스템 로그 조회
-- **crontab**: 자동 실행 스케줄링
-
-
-## 📁 파일 구조
+## 파일 구조
 
 ```
 /home/ubuntu/
@@ -38,7 +39,7 @@ Linux 시스템에서 `journalctl`, `crontab`, `awk`를 사용한 실시간 CPU 
 └── README.md           # 이 파일
 ```
 
-## 🚀 설치 및 실행 방법
+## 설치 및 실행 방법
 
 ### 1. 스크립트 파일 생성
 
@@ -109,7 +110,7 @@ cat /home/ubuntu/cpu_log.txt
 2025-09-05 16:20:40 CPU: 100% - 정상
 ```
 
-## ⚙️ 설정 변경
+## 설정 변경
 
 ### CPU 임계값 변경
 
@@ -134,7 +135,7 @@ sleep 5     # 5초마다
 sleep 10    # 10초마다
 ```
 
-## 📊 출력 
+## 출력 
 
 <img width="640" height="382" alt="image" src="https://github.com/user-attachments/assets/85b881e4-7d84-45df-9584-220b96a6f8c9" />
 
@@ -154,7 +155,7 @@ sleep 10    # 10초마다
 2025-09-05 16:12:06 CPU: 78% - 정상
 ```
 
-## 🧪 테스트 방법
+## 테스트 방법
 
 ### CPU 스트레스 테스트
 
@@ -170,7 +171,7 @@ tail -f /home/ubuntu/cpu_log.txt
 ```
 
 
-## 🔧 문제 해결
+## 문제 해결
 
 ### 스크립트가 실행되지 않는 경우
 
@@ -194,8 +195,3 @@ kill [PID번호]
 # 모든 cpu_monitor 프로세스 종료
 pkill -f cpu_monitor
 ```
-
----
-
-**작성자**: 홍윤기
-**최종 수정**: 2025-09-05 
